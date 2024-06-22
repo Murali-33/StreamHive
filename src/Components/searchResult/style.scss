@@ -1,0 +1,55 @@
+@import "../../mixins.scss";
+
+.searchResultsPage {
+    min-height: 100vh; 
+    padding-top: 100px; 
+    // background-color: #f0f0f0; 
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Start align vertically (top) */
+
+    .contentWrapper {
+        width: 100%; 
+        max-width: 1200px; 
+        padding: 0 20px; 
+        box-sizing: border-box; /* Include padding in width */
+
+        .resultNotFound {
+            font-size: 24px;
+            color: var(--black-light); /* Example color */
+            text-align: center; /* Center text */
+            margin-top: 20px; /* Add top margin */
+        }
+
+        .pageTitle {
+            font-size: 24px;
+            line-height: 34px;
+            color: white; /* Example color */
+            margin-bottom: 25px;
+            text-align: center; /* Center text */
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Adjust the gap between items */
+            justify-content: center; /* Center items horizontally */
+
+            .movieCard {
+                width: calc(20% - 16px); /* Adjust width for five cards in a row */
+                margin-bottom: 20px; /* Example margin */
+                cursor: pointer;
+                flex-shrink: 0;
+
+                @include md {
+                    width: calc(20% - 20px); /* Adjust for medium screens */
+                }
+
+                .posterBlock {
+                    margin-bottom: 10px; /* Example margin */
+                }
+            }
+        }
+    }
+}
