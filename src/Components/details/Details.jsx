@@ -17,7 +17,7 @@ function Details() {
   return (
     <div className='detailsPage'>
       <div className="sectionWrapper">
-      <DetailsBanner video={data?.results?.[0]} crew={credits?.crew}/>
+      <DetailsBanner video={data?.results?.[0]} crew={credits?.data?.crew}/>
       <Cast data={credits?.crew} loading={loading}/>
       <VideosSection data={data} />
       <Similar mediaType={mediaType} id={id}/>

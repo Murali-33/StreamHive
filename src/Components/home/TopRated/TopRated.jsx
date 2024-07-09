@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
-import '../trending/Trending.scss';
-import ContentWrapper from '../../contentWrapper/ContentWrapper';
-import SwitchTab from '../../switchTab/SwitchTab';
-import useFetch from '../../customHook/useFetch';
-import Carousel from '../../carousel/Carousel';
+import React, { useState } from "react";
+import "../trending/Trending.scss";
+import ContentWrapper from "../../contentWrapper/ContentWrapper";
+import SwitchTab from "../../switchTab/SwitchTab";
+import useFetch from "../../customHook/useFetch";
+import Carousel from "../../carousel/Carousel";
 
 function TopRated() {
-  const [endpoint, setEndpoint] = useState("/tv/top_rated");
+  const [endpoint, setEndpoint] = useState("movie");
 
-  const { data, loading } = useFetch(endpoint);
+  const { data, loading } = useFetch(`/${endpoint}/top_rated`);
 
   const onTabChange = (tab) => {
-    if (tab === "Top TV Shows") {
-      setEndpoint("/tv/top_rated");
-    } else if (tab === "Top Movies") {
-      setEndpoint("/movie/top_rated");
-    } else if (tab === "Streaming") {
-      setEndpoint("/tv/airing_today");
-    }
+    setEndpoint(tab === "Movies" ? "movie" : "tv");
   };
 
   return (
-    <div className='carouselSection'>
+    <div className="carouselSection">
       <ContentWrapper>
-        <span className='carouselTitle'>
-          Top Rated
-        </span>
-        <SwitchTab data={["Top Movies", "Top TV Shows", "Streaming"]} onTabChange={onTabChange} />
+        <span className="carouselTitle">Top Rated</span>
+        <SwitchTab data={["Movies", "Tv Shows"]} onTabChange={onTabChange} />
       </ContentWrapper>
       <Carousel data={data?.results} loading={loading} />
     </div>
