@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/popcorn-movie-cinema-svgrepo-com.svg";
+import logo from "./image/home.png";
 import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";

@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-/** @type {import('jest').Config} */ 
+/** @type {import('jest').Config} */
 const config = {
   testEnvironment: "jsdom",
   clearMocks: true,
@@ -13,6 +13,7 @@ const config = {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
     "\\.(gif|ttf|eot|svg|jpg|png)$": "<rootDir>/__mocks__/fileMock.js",
   },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
