@@ -10,30 +10,6 @@ describe("Footer testing", () => {
     screen.getByText(/Terms Of Use/i);
   });
 
-  // it("test the social icon links", () => {
-  //     render(<Footer />);
-  //   // Select social links based on their href attributes
-  //   const githubLink = ""
-
-  //   const LinkedInLink =""
-
-  //     // Create a mock function to test the click event
-  // const handleClick = jest.fn();
-
-  // // Add event listener to each link
-  // githubLink.forEach(link => {
-  //   link.addEventListener('click', handleClick);
-  //   fireEvent.click(link);
-  //   link.removeEventListener('click', handleClick);
-  // });
-
-  // LinkedInLink.forEach(link => {
-  //   link.addEventListener('click', handleClick);
-  //   fireEvent.click(link);
-  //   link.removeEventListener('click', handleClick);
-  // });
-  // });
-
   test("social links fire events correctly", () => {
     const { container } = render(<Footer />);
 
